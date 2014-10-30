@@ -128,7 +128,7 @@ static int luacconv(lua_State *L)
 
 	cm_memzero(outstr, outlen);
 
-	size = cconv(cd, &str, &inlen, &p, &outlen);
+	size = cconv(cd, (const char **)&str, &inlen, &p, &outlen);
 	cconv_close(cd);
 	if (size == (size_t)(-1))
 	{
